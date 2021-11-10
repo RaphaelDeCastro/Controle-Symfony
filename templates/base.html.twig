@@ -2,18 +2,32 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
+        <title>Controle Symphony{% block title %}Bienvenue !{% endblock %}</title>
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
-
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/app.min.css">
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        {% include 'home/header.html.twig' %}
+
+        {% block body %}
+        <div class="container">
+            <h1>Bienvenue sur mon site</h1>
+        </div>
+        <div class="container">
+            <p>Veuillez voir les différents contact</p>
+        </div>
+        {% endblock %}
+
+        {% include 'home/footer.html.twig' %}
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+
+        {% block javascripts %}{% endblock %}
+
     </body>
 </html>

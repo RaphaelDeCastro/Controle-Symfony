@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ad-title" style="background-image: url({{ contact.avatar }}); height: 150px; width: 100%; display: block">
+        <div class="container">
+            <h1 style="color:white;"><strong>{{contact.nom}} {{contact.prénom}}</strong></h1>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Informations : </h1>
+        <p>
+            Code Postal : <b>{{contact.codePostal}}</b><br>
+            Ville : <b>{{contact.ville}}</b><br>
+            Téléphone : <b>{{contact.telephone}}</b><br>
+            eMail : <b>{{contact.mail}}</b><br>
+            Categorie : <b>{{contact.Categoriee.designation}}</b>
+        </p>
+    </div>
+{% endblock %}
+

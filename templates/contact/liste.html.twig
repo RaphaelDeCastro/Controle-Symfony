@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <h1>Liste des contacts</h1>
+        <div class="row">
+            {% for contact in contacts %}
+                {% set url = path('contact_show', {'id': contact.id}) %}
+                <div class="col-md-4">
+                    <div class="card md-4 shadow-5m">
+                        <a href="{{url}}">
+                        <img src="{{contact.avatar}}" alt="Image du contact {{contact.id}}" class="card-tmg-top" style="height: 200px; width: 100%; display: block">
+                        </a>
+                        <div class="card-body">
+                            <div class="card-text">
+                                <h4>Nom : {{contact.nom}} || Prénom : {{contact.prénom}}</h4>
+                                <h4>Téléphone : {{contact.Telephone}}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
